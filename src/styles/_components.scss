@@ -1,0 +1,148 @@
+@use 'mixins' as *;
+
+.card {
+  @include card;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: var(--shadow-md);
+  }
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  &--income  {
+    background-color: var(--color-success-dim);
+    color: var(--color-success);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+  }
+  &--expense {
+    background-color: var(--color-error-dim);
+    color: var(--color-error);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+  }
+  &--gold    {
+    background-color: var(--color-gold-dim);
+    color: var(--color-gold);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+  }
+  &--primary {
+    background-color: var(--color-primary-dim);
+    color: var(--color-primary-light);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+  }
+}
+
+.amount {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  &--positive { color: var(--color-success); }
+  &--negative { color: var(--color-error); }
+  &--neutral  { color: var(--color-text); }
+}
+
+/* Form elements */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+
+  label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    letter-spacing: 0.02em;
+  }
+}
+
+.input,
+.select {
+  background-color: var(--color-surface-2);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 10px var(--spacing-md);
+  font-size: 0.875rem;
+  font-family: var(--font-family);
+  width: 100%;
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-dim);
+  }
+
+  option {
+    background-color: var(--color-surface-2);
+  }
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: 10px var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+
+  &--primary {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    color: white;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+
+    &:hover {
+      box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
+      transform: translateY(-1px);
+    }
+  }
+
+  &--ghost {
+    background-color: var(--color-surface-2);
+    color: var(--color-text-secondary);
+    border-color: var(--color-border);
+
+    &:hover {
+      background-color: var(--color-surface-3);
+      color: var(--color-text);
+    }
+  }
+
+  &--gold {
+    background: linear-gradient(135deg, var(--color-gold-dark), var(--color-gold));
+    color: #0A0B0F;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+
+    &:hover {
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.4);
+      transform: translateY(-1px);
+    }
+  }
+
+  &--danger {
+    background-color: var(--color-error-dim);
+    color: var(--color-error);
+    border-color: rgba(239, 68, 68, 0.2);
+
+    &:hover {
+      background-color: rgba(239, 68, 68, 0.25);
+    }
+  }
+
+  &:active { transform: translateY(0); }
+}

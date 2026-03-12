@@ -1,0 +1,45 @@
+{
+  "name": "finans-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview",
+    "android": "npm run build && npx cap sync android && npx cap open android",
+    "android:sync": "npm run build && npx cap sync android",
+    "android:run": "npx cap run android",
+    "cap:sync": "npx cap sync"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.1.0",
+    "@capacitor/app": "^8.0.1",
+    "@capacitor/cli": "^8.1.0",
+    "@capacitor/core": "^8.1.0",
+    "@capacitor/haptics": "^8.0.1",
+    "@capacitor/splash-screen": "^8.0.1",
+    "@capacitor/status-bar": "^8.0.1",
+    "@mdi/font": "^7.4.47",
+    "apexcharts": "^5.10.1",
+    "axios": "^1.13.6",
+    "pinia": "^3.0.4",
+    "sass": "^1.97.3",
+    "uuid": "^13.0.0",
+    "vue": "^3.5.25",
+    "vue-i18n": "^10.0.8",
+    "vue-router": "^4.6.4",
+    "vue3-apexcharts": "^1.11.1",
+    "vuetify": "^3.12.2"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@types/uuid": "^10.0.0",
+    "@vitejs/plugin-vue": "^6.0.2",
+    "@vue/tsconfig": "^0.8.1",
+    "typescript": "~5.9.3",
+    "vite": "^7.3.1",
+    "vite-plugin-pwa": "^1.2.0",
+    "vue-tsc": "^3.1.5"
+  }
+}
